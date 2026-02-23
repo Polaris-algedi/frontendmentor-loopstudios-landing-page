@@ -1,0 +1,334 @@
+@import url("https://fonts.googleapis.com/css2?family=Alata:wght@400&family=Josefin+Sans:wght@300&display=swap");
+
+:root {
+  /* Font Families */
+  --font-family-body: "Alata", sans-serif;
+  --font-family-heading: "Josefin Sans", sans-serif;
+  --font-size-base-desktop: 15px;
+  --font-size-base-mobile: 1.188rem; /* 19px */
+  --line-height-body-mobile: 1.7;
+  --letter-spacing-body-mobile: 0.0015em;
+
+  /* Color Palette */
+  --white: hsl(0, 0%, 100%);
+  --black: hsl(0, 0%, 0%);
+  --grey-200: hsl(0, 0%, 85%);
+  --grey-350: hsl(0, 0%, 35%);
+
+  --gutter: 2rem;
+  --space-16: 1rem;
+  --space-19: 1.188rem;
+  --space-20: 1.25rem; /* 20px */
+  --space-24: 1.5rem;
+  --space-27: 1.6875rem; /* 27px */
+  --space-32: 2rem;
+  --space-42: 2.625rem; /* 42px */
+  --space-48: 3rem;
+  --space-60: 3.75rem;
+  --space-64: 4rem; /* 64px */
+  --space-70: 4.375rem; /* 70px */
+  --space-74: 4.625rem; /* 74px */
+  --space-122: 7.625rem;
+
+  /* Typography */
+  --fs-51: 3.188rem;
+  --fs-41: 2.563rem;
+  --fs-31: 1.938rem;
+  --fs-19: 1.188rem;
+  --fs-18: 1.125rem;
+
+  /* Borders */
+  --border-1: 1px solid var(--black);
+  --border-3: 3px solid var(--white);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  display: block;
+  max-inline-size: 100%;
+  height: auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-family-heading);
+  text-transform: uppercase;
+  margin: 0;
+}
+
+/* Prevent scrolling on the background */
+.no-scroll {
+  overflow: hidden;
+  height: 100vh;
+}
+
+body {
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-base-mobile);
+  background-color: var(--white);
+  color: var(--black);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+
+.site-header__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-block-start: var(--space-48);
+  padding-inline: var(--gutter);
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2001;
+  background: transparent;
+}
+
+.site-header__menu {
+  display: block;
+  cursor: pointer;
+  border: none;
+  background: none;
+  padding: 0;
+  margin: 0;
+}
+
+.section {
+  margin-block-end: var(--space-122);
+}
+
+.hero-section {
+  position: relative;
+}
+
+.hero-section__title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  font-size: var(--fs-51);
+  line-height: 0.96;
+  letter-spacing: 0em;
+  color: var(--white);
+  border: var(--border-3);
+  padding: var(--space-32);
+}
+
+.section-creations,
+.section-interactive {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding-inline: var(--gutter);
+}
+
+.section-interactive picture {
+  margin-block-end: var(--space-60);
+}
+
+.section-interactive__title,
+.section-creations__title {
+  font-size: var(--fs-41);
+}
+
+.section-interactive__title {
+  margin-block-end: var(--space-19);
+}
+.section-creations__title {
+  margin-block-end: var(--space-60);
+}
+
+.section-interactive__description {
+  font-size: var(--fs-19);
+  line-height: var(--line-height-body-mobile);
+  letter-spacing: var(--letter-spacing-body-mobile);
+  color: var(--grey-350);
+  padding-inline: var(--gutter);
+}
+
+.section-creations-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-32);
+  justify-content: center;
+  width: 100%;
+  margin-block-end: var(--space-42);
+}
+
+/* Make each item a relative container */
+.section-creations__item {
+  position: relative;
+  width: 100%; /* adjust based on your grid/flex needs */
+}
+
+.section-creations__item::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* Position title over the image */
+.section-creations__picture__title {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  color: var(--white);
+  font-size: var(--fs-31);
+  z-index: 10;
+  text-align: start;
+}
+
+.line-break {
+  display: block;
+}
+
+.section-creations__button {
+  font-family: var(--font-family-body);
+  font-size: var(--fs-18);
+  text-transform: uppercase;
+  letter-spacing: 0.35em;
+  border: var(--border-1);
+  background: none;
+  padding: 0.813rem 3rem;
+}
+
+.footer {
+  background-color: var(--black);
+  color: var(--white);
+  text-align: center;
+  width: 100%;
+  /* padding: 2rem; */
+}
+.footer__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer__logo-wrapper {
+  padding: var(--space-70) 0 var(--space-42) 0;
+}
+
+.footer__nav {
+  margin-block-end: var(--space-64);
+}
+
+.footer__nav-list,
+.footer__social-nav-list {
+  list-style: none;
+  display: flex;
+}
+
+.footer__nav-list {
+  flex-direction: column;
+  gap: var(--space-27);
+}
+
+.footer__social-nav-list {
+  gap: var(--space-20);
+  justify-content: center;
+  margin-block-end: var(--space-24);
+}
+
+.footer__nav-item a {
+  font-size: var(--fs-19);
+  text-decoration: none;
+  color: var(--white);
+}
+
+.footer__social-nav-icon {
+  width: 30px;
+  height: 30px;
+}
+
+.footer__copyright {
+  font-size: var(--fs-19);
+  letter-spacing: 0.015em;
+  color: var(--grey-200);
+  margin-block-end: var(--space-74);
+}
+
+/*______________________-------------------- Mobile Menu styles --------------------______________________*/
+.site-header__nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: #000;
+
+  /* Centering the links */
+  display: flex;
+  align-items: center;
+  padding-inline: var(--gutter);
+
+  /* Hidden by default */
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.3s ease,
+    visibility 0.3s ease;
+  z-index: 1000;
+}
+
+/* State when menu is open */
+.site-header.is-open .site-header__nav {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* 3. The Links List */
+.site-header__nav-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-32); /* 32px */
+  text-transform: uppercase;
+}
+
+.site-header__nav-item a {
+  font-family: var(--font-family-heading);
+  color: #fff;
+  text-decoration: none;
+  font-size: var(--fs-31);
+  letter-spacing: 0;
+}
+
+/* 2. Fix Stacking */
+.site-header__logo,
+.site-header__menu {
+  z-index: 2000; /* Higher than the nav overlay */
+}
+
+/*______________________-------------------- Mobile Menu styles End --------------------______________________*/
