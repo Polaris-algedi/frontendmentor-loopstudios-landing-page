@@ -16,6 +16,7 @@
   --grey-350: hsl(0, 0%, 35%);
 
   --gutter: 2rem;
+  --gutter-desktop: 10.25rem;
   --space-16: 1rem;
   --space-19: 1.188rem;
   --space-20: 1.25rem; /* 20px */
@@ -36,6 +37,7 @@
   --fs-31: 1.938rem;
   --fs-19: 1.188rem;
   --fs-18: 1.125rem;
+  --fs-15: 0.938rem;
 
   /* Borders */
   --border-1: 1px solid var(--black);
@@ -294,9 +296,6 @@ body {
   /* Hidden by default */
   opacity: 0;
   visibility: hidden;
-  transition:
-    opacity 0.3s ease,
-    visibility 0.3s ease;
   z-index: 1000;
 }
 
@@ -332,3 +331,43 @@ body {
 }
 
 /*______________________-------------------- Mobile Menu styles End --------------------______________________*/
+
+@media (min-width: 768px) {
+  .site-header__container {
+    padding-block-start: var(--space-64);
+    padding-inline: var(--gutter-desktop);
+  }
+
+  .site-header__menu {
+    display: none;
+  }
+
+  .site-header__nav {
+    position: static;
+    width: auto;
+    height: auto;
+    background-color: transparent;
+
+    /* Centering the links */
+    display: block;
+    padding-inline: 0;
+
+    /* Hidden by default */
+    opacity: 1;
+    visibility: visible;
+    z-index: 1000;
+  }
+
+  .site-header__nav-list {
+    display: flex;
+    flex-direction: row;
+    gap: var(--space-32); /* 32px */
+    text-transform: capitalize;
+  }
+
+  .site-header__nav-item a {
+    font-family: var(--font-family-body);
+    font-size: var(--fs-15);
+    letter-spacing: 0;
+  }
+}
