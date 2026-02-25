@@ -21,11 +21,13 @@
   --space-19: 1.188rem;
   --space-20: 1.25rem; /* 20px */
   --space-24: 1.5rem;
+  --space-26: 1.625rem; /* 26px */
   --space-27: 1.6875rem; /* 27px */
   --space-32: 2rem;
   --space-38: 2.375rem; /* 38px */
   --space-40: 2.5rem;
   --space-42: 2.625rem; /* 42px */
+  --space-44: 2.75rem; /* 44px */
   --space-48: 3rem;
   --space-60: 3.75rem;
   --space-64: 4rem; /* 64px */
@@ -51,6 +53,9 @@
   --border-1: 1px solid var(--black);
   --border-2: 2px solid var(--grey-350);
   --border-3: 3px solid var(--white);
+
+  /* Logo Sizes */
+  --logo-144: 9rem;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -421,6 +426,11 @@ body {
     padding-inline: var(--gutter-desktop);
   }
 
+  .section-interactive__title,
+  .section-creations__title {
+    font-size: var(--fs-48);
+  }
+
   .section-creations {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -434,10 +444,6 @@ body {
     gap: var(--space-32);
     order: 3;
     margin-block-end: 0;
-  }
-  .section-interactive__title,
-  .section-creations__title {
-    font-size: var(--fs-48);
   }
 
   .section-creations__title {
@@ -457,5 +463,51 @@ body {
   .section-creations__picture__title {
     padding: var(--space-32) var(--space-40);
     font-size: var(--fs-32);
+  }
+
+  .footer {
+    text-align: start;
+  }
+  .footer__container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: var(--space-44) var(--gutter-desktop);
+  }
+
+  .footer__logo-wrapper {
+    padding: 0 0 var(--space-26) 0;
+  }
+  .footer__logo-wrapper img {
+    width: var(--logo-144);
+    height: auto;
+  }
+
+  .footer__nav {
+    margin-block-end: 0;
+  }
+
+  .footer__nav-list {
+    flex-direction: row;
+    gap: var(--space-32);
+  }
+
+  .footer__nav-item a {
+    font-size: var(--fs-15);
+  }
+
+  .footer__social-nav-list {
+    gap: var(--space-16);
+    margin-block-end: var(--space-26);
+  }
+
+  .footer__social-nav-icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  .footer__copyright {
+    font-size: var(--fs-15);
+    margin-block-end: 0;
   }
 }
